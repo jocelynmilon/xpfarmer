@@ -1,69 +1,99 @@
-
 <section class="create">
-        <div class="col-sm-8 col-sm-offset-2">
-        <h2 class="titre">Creer votre compte</h2>
-        <form >
-          <div class="form-group">
-            <label for="email">firstName</label>
-            <input
-              type="text"
-              id="firstName"
-              class="form-control"
-              
-            />
-          </div>
-          <div class="form-group">
-            <label for="text">lastname</label>
-            <input
-              type="text"
-              id="lastname"
-              class="form-control"
-             
-            />
-          </div>
-          <div class="form-group">
-            <label for="text">avatar</label>
-            <input
-              type="url"
-              id="avatar"
-              class="form-control"
-              
-            />
-          </div>
-          
-          <div class="has-success">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" id="checkboxSuccess" value="option1">
-                money
-              </label>
-            </div>
-          </div>
-          <div class="has-success">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" id="checkboxSuccess2" value="option2">
-               level
-              </label>
-            </div>
-          </div>
-          <div class="has-success">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" id="checkboxSuccess3" value="option3">
-                levelpoint
-              </label>
-            </div>
-          </div>
-          <button
-            class="btn btn-primary connect"
-            type="submit"
-            [disabled]=""
-          >
-            Connexion
-          </button>
-        </form>
-        <p class="text-danger"></p>
+  <!-- <div class="col-sm-8 col-sm-offset-2">
+    <h2 class="titre">Creer votre compte</h2>
+    <form>
+      <div class="form-group">
+        <label for="email">firstName</label>
+        <input type="text" id="firstName" class="form-control" />
       </div>
-       </section>
-  
+      <div class="form-group">
+        <label for="text">lastname</label>
+        <input type="text" id="lastname" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="text">avatar</label>
+        <input type="url" id="avatar" class="form-control" />
+      </div>
+
+      <div class="has-success">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="checkboxSuccess" value="option1" />
+            money
+          </label>
+        </div>
+      </div>
+      <div class="has-success">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="checkboxSuccess2" value="option2" />
+            level
+          </label>
+        </div>
+      </div>
+      <div class="has-success">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="checkboxSuccess3" value="option3" />
+            levelpoint
+          </label>
+        </div>
+      </div>
+      <button class="btn btn-primary connect" type="submit" [disabled]="">
+        Connexion
+      </button>
+    </form>
+    <p class="text-danger"></p>
+  </div>-->
+  <div class="panel-body">
+    <form [formGroup]="form" (ngSubmit)="createUser()">
+      <div class="form-group col-sm-6">
+        <label for="firstName">firstname</label>
+        <input
+          type="text"
+          name="firstName"
+          class="form-control"
+          placeholder="votre noms"
+          formControlName="firstName"
+        />
+      </div>
+      <div class="form-group col-sm-6">
+        <label for="lastName">lastname</label>
+        <input
+          type="text"
+          name="lastName"
+          class="form-control"
+          placeholder="votre prenoms"
+          formControlName="lastName"
+        />
+      </div>
+      <div class="form-group col-sm-6">
+        <label for="avatar">Avatar</label>
+        <input
+          type="text"
+          name="avatar"
+          class="form-control"
+          placeholder="votre photos"
+          formControlName="avatar"
+        />
+      </div>
+      <div class="form-group col-sm-6">
+        <label for="stats">statistique</label>
+        <select
+          name="stats"
+          class="custom-select"
+          formControlName="stats"
+          multiple
+        >
+          <option selected>vous avez plusieurs choix</option>
+          <option *ngFor="let st of stat" [value]="st.value">{{
+            st.name
+          }}</option>
+        </select>
+      </div>
+      <div class="form-group col-sm-12">
+        <button type="submit" class="btn btn-success">creer user</button>
+      </div>
+    </form>
+  </div>
+</section>
