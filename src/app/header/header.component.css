@@ -1,0 +1,18 @@
+nav.navbar.navbar-default {
+
+    background: black;
+    color: #fff;
+    border-color: black;
+    /* height: 88px; */
+    margin: 0;
+
+}
+a.navbar-brand {
+    color: #fff;
+    font-size: 20px;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
+
+    

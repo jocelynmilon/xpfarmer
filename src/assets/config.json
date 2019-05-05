@@ -1,0 +1,5 @@
+{
+    "userUrl": " http://localhost:3000/userConnected ",
+    "gameUrl": "http://localhost:3000/game",
+    "boostersUrl": "http://localhost:3000/boosters"
+}
